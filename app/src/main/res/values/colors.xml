@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="main_color">#66A5FF</color>
+    <color name="mode">#000000</color>
+    <color name="mode_inverse">#FFFFFF</color>
+    <color name="mode_inverse_transparent">#E4FFFFFF</color>
+    <color name="mode_extra">#2B2B2B</color>
+    <color name="mode_inverse_extra">#E3E3E3</color>
+    <color name="nav_bg">#D9DADADA</color>
+    <color name="nav_bg2">#DADADA</color>
+    <color name="card_color">#DCDCDC</color>
+    <color name="mode_blue">#2980FF</color>
+    <color name="mode_light_blue">#7DB2FF</color>
+    <color name="ripple_effect">#31000000</color>
+    <color name="dim_bacground">#E6FFFFFF</color>
+    <color name="dim_bacground2">#6FA6A6A6</color>
+    <color name="mode_transparent_capsule">#54000000</color>
+
+
+
+
+    <!--player-->
+    <color name="light_dark">#74000000</color>
+    <color name="teal_200">#1A78F2</color>
+    <color name="purple_200">#1A78F2</color>
+    <!--player-->
+
+</resources>

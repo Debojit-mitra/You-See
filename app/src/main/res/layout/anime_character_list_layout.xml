@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/fullround_card"
+    android:id="@+id/relative_root_layout"
+    android:padding="1dp"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/thumbnailContainer"
+        android:layout_width="90dp"
+        android:layout_height="130dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/mode_inverse"
+            app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/animeThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/thumbnail"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+        <ProgressBar
+            android:id="@+id/thumbnailProgress"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/main_color"
+            android:elevation="5dp"
+            android:visibility="visible"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rating_layout"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_alignEnd="@+id/thumbnailContainer"
+        android:layout_alignBottom="@+id/thumbnailContainer"
+        android:background="@drawable/leftround_card"
+        android:gravity="center"
+        android:backgroundTint="@color/main_color">
+
+        <TextView
+            android:id="@+id/animeRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/_7_0"
+            android:textColor="@color/mode"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:src="@drawable/ic_round_star_24"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/animeRating"
+            app:tint="@color/mode"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thumbnailContainer"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/animeRelation"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="@string/relations"
+                android:textSize="11sp"
+                android:layout_marginTop="1dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/animeName"
+            android:layout_width="90dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/anime_name"
+            android:textColor="@color/mode"
+            android:textSize="13sp"
+            android:maxLines="2"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/animeTotalEpisodes"
+            android:layout_width="90dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/total_episodes"
+            android:textSize="11sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_spacing">5dp</dimen>
+    <dimen name="item_width">200dp</dimen>item_widthSearchActivity
+    <dimen name="item_widthSearchActivity">130dp</dimen>
+</resources>

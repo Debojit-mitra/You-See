@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:id="@+id/main_relative_layout"
+    android:background="@color/mode_inverse">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/fullround_card"
+        android:backgroundTint="@color/mode_inverse_extra"
+        >
+
+        <TextView
+            android:id="@+id/textView_serverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="@string/select_server"
+            android:textSize="20sp"
+            android:textColor="@color/mode"/>
+
+      <!--  <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/mode_inverse_extra"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@+id/textView_serverName"
+            />-->
+
+   <!--     <TextView
+            android:id="@+id/textView_serverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/select_server"
+            android:textSize="16sp"
+            android:textStyle="normal" />-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mode_inverse"
+    tools:context=".activities.ViewAllActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mode_inverse_extra"
+        android:elevation="6dp"
+        >
+
+        <TextView
+            android:id="@+id/topShowAll_TextVIew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@+id/totalResults"
+            android:textColor="@color/mode"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_extra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topShowAll_TextVIew"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/mode"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/top_airing_recyclerView_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutAnimation="@anim/layout_animation"
+        android:layout_below="@+id/relative1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_for_top_airing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/main_ProgressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/main_color"
+        android:elevation="5dp"
+        android:visibility="visible"
+        />
+
+    <TextView
+        android:id="@+id/textView_noResult_found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_result_found"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

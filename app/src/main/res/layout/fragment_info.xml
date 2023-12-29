@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mode_inverse"
+    android:scrollbars="none"
+    tools:context=".fragments.InfoFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/episodeProgressBar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="120dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="25dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/main_color" />
+
+        <TextView
+            android:id="@+id/episodeAiringInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:layout_marginTop="95dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:elevation="20dp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:id="@+id/first_container"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:visibility="invisible">
+
+            <com.flaviofaria.kenburnsview.KenBurnsView
+                android:id="@+id/animatedImageBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@drawable/linear_gradient_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|bottom"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/episodeReleasing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_above="@+id/episodeDateTimer"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="18sp"
+                    android:elevation="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/episodeDateTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:textColor="@color/mode"
+                    android:layout_above="@+id/thumbnailContainer"
+                    android:visibility="gone"
+                    android:elevation="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/thumbnailContainer"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:elevation="5dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/mode_inverse"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:id="@+id/dramaThumbnail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/thumbnail"
+                            android:scaleType="centerCrop" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <ProgressBar
+                        android:id="@+id/thumbnailProgress"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:elevation="5dp"
+                        android:indeterminateTint="@color/main_color" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignEnd="@+id/thumbnailContainer"
+                    android:layout_alignBottom="@+id/thumbnailContainer"
+                    android:background="@drawable/leftround_card"
+                    android:backgroundTint="@color/main_color"
+                    android:elevation="5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView_dramaRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/_0_0"
+                        android:textColor="@color/mode"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_toEndOf="@+id/textView_dramaRating"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/ic_round_star_24"
+                        app:tint="@color/mode" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/drama_details_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/thumbnailContainer"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/textView_dramaName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/n_a"
+                        android:textColor="@color/mode"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_dramaType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/releasing_drama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="170dp"
+                    android:layout_toEndOf="@+id/thumbnailContainer"
+                    android:textColor="@color/mode_blue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/main_Progress"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:indeterminateTint="@color/main_color" />
+
+        <LinearLayout
+            android:id="@+id/second_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first_container"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView_dramaRating_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaRating2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaEpisodes_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_episodes"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaEpisodes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaCountry_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drama_country"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaAired_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aired"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaAired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:maxWidth="200dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaAiredON_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aired_on"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaAiredON"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:maxWidth="200dp"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaDuration_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/average_duration"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaRank_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ranked"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaPopularity_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/popularity"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaPopularity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaNativeTitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/native_title"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaNativeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaNativeTitleEnglish_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/also_knows_as"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView_dramaTitleEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/n_a"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/mode"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaScreenWriter_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screenwriter"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaScreenWriter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    android:maxWidth="200dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                >
+                <TextView
+                    android:id="@+id/textView_dramaDirector_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/director"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_dramaDirector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textStyle="bold"
+                    android:maxWidth="200dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaOriginalNetwork_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/original_network"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_OriginalNetwork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    android:maxWidth="200dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/textView_dramaContentRating_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/content_rating"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"
+                    />
+                <TextView
+                    android:id="@+id/textView_ContentRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/n_a"
+                    android:maxWidth="200dp"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/mode"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/third_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/second_container"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <TextView
+                android:id="@+id/textView_dramaGenres_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/genres"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/mode"
+                android:visibility="gone"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_for_genres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/textView_dramaGenres_text"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fourth_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/third_container"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            >
+
+            <TextView
+                android:id="@+id/textView_watchHere_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/available_on"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/mode"
+                android:layout_alignParentStart="true"
+                android:visibility="gone"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_for_watchHere"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/textView_watchHere_text"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/fifth_container_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            android:layout_below="@+id/fourth_container">
+
+
+            <TextView
+                android:id="@+id/textView_dramaCast_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cast"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/mode"
+                android:layout_alignParentStart="true"
+                />
+
+            <RelativeLayout
+                android:id="@+id/view_all_cast_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_fullround_card_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/view_all_cast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:alpha="0.9"
+                    android:padding="5dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/mode_blue"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/fifth_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fifth_container_text"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_for_cast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView_detailsBy_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_by_mydramalist_com"
+            android:layout_below="@+id/fifth_container"
+            android:layout_marginBottom="50dp"
+            android:textStyle="italic"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:ignore="WebViewLayout" />
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

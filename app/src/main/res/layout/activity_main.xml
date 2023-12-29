@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:background="@color/mode_inverse">
+
+    <FrameLayout
+        android:id="@+id/main_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/navbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/animatedBottomBar"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bottom_nav"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="60dp"
+        android:elevation="4dp"
+        android:padding="8dp"
+        android:translationZ="12dp"
+        app:abb_textStyle="bold"
+
+        app:abb_selectedTabType="text"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorMargin="12dp"
+        app:abb_indicatorHeight="4dp"
+        app:abb_tabs="@menu/tabs"
+        app:abb_selectedIndex="0"
+        app:abb_indicatorLocation="bottom"
+
+        app:abb_animationDuration="300"
+        app:abb_animationInterpolator="@anim/overshoot"
+        app:abb_badgeBackgroundColor="#F44336" />
+
+    </FrameLayout>
+
+</RelativeLayout>

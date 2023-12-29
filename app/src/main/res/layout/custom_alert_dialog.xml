@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/mode_inverse_extra"
+    >
+
+
+   <!-- <Spinner
+        android:id="@+id/selectFromSpinner"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@+id/custom_animationView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_spinner"
+        android:spinnerMode="dropdown"
+        android:popupBackground="@drawable/background_spinner"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/selectFromSpinner_dropdown"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_alignEnd="@+id/selectFromSpinner"
+        android:src="@drawable/ic_drop_down"
+        android:layout_alignTop="@+id/selectFromSpinner"
+        android:visibility="gone"
+        app:tint="@color/mode"
+        />
+-->
+    <TextView
+        android:id="@+id/custom_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:textColor="@color/mode"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_textview"
+        android:gravity="center"
+        >
+
+    <Button
+        android:id="@+id/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/okay"
+        android:textSize="15sp"
+        android:textColor="@color/mode"
+        style="?android:attr/borderlessButtonStyle"
+        android:visibility="gone"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        />
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textSize="15sp"
+        android:textColor="@color/mode"
+        style="?android:attr/borderlessButtonStyle"
+        android:visibility="gone"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        />
+
+    </LinearLayout>
+
+</RelativeLayout>

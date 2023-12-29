@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/mode_inverse"/> <!-- Set the background color -->
+    <stroke android:color="@color/mode_inverse_extra" android:width="2dp"/> <!-- Set the border color and width -->
+    <corners android:radius="15dp"/> <!-- Set the corner radius -->
+</shape>

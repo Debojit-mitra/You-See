@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:gravity="center|center_horizontal"
+    android:background="@color/mode_inverse">
+
+
+    <RelativeLayout
+        android:id="@+id/watchHere_relative"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/full_round_border"
+        android:layout_marginEnd="5dp"
+        android:padding="1dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/watchHere_cardView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/ottThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/thumbnail"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView_ottName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/mode"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toEndOf="@+id/watchHere_relative"
+        />
+
+    <TextView
+        android:id="@+id/textView_ottSubscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/mode"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_below="@+id/textView_ottName"
+        android:layout_toEndOf="@+id/watchHere_relative"
+        />
+
+
+</RelativeLayout>

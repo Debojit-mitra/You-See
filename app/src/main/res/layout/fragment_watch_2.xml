@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@color/mode_inverse"
+    tools:context=".fragments.WatchFragment_2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView_show_selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:alpha="0.9"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="@color/mode"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:visibility="invisible" />
+
+        <include
+            android:id="@+id/card_root_layout_Continue_watching"
+            layout="@layout/continue_watching_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/textView_show_selected"
+            android:layout_margin="10dp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_for_episodeGroups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_root_layout_Continue_watching"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/episode_recyclerView_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/recyclerView_for_episodeGroups"
+            android:layout_marginBottom="50dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_for_episode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_Main"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:indeterminateTint="@color/main_color" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

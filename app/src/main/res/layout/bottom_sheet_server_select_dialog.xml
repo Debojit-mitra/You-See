@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_bottomSheet_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mode_inverse"
+    android:minHeight="400dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/select_server"
+            android:textColor="@color/mode"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/make_default_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_default"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:checked="true"
+            android:buttonTint="@color/mode_blue"
+            android:visibility="invisible"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textview_search"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/textView_custom"
+            android:hint="@string/Search"
+            app:boxStrokeWidth="2dp"
+            app:endIconMode="custom"
+            android:elevation="10dp"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false"
+            app:endIconDrawable="@drawable/ic_round_search_24"
+            app:endIconTint="@color/mode_blue"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:clickable="false"
+                android:focusable="false"
+
+                android:maxLength="30" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_for_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_search"
+            android:layout_centerInParent="true"
+            android:layout_margin="15dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/layout_auto_selected_server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_below="@+id/recyclerView_for_custom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/auto_selecting_server"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                />
+            <ProgressBar
+                android:id="@+id/server_autoSelect_ProgressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:indeterminateTint="@color/main_color"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textSize="15sp"
+            android:textColor="@color/mode"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_below="@+id/recyclerView_for_custom"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            />
+
+        <ProgressBar
+            android:id="@+id/main_ProgressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/recyclerView_for_custom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:elevation="5dp"
+            android:indeterminateTint="@color/main_color"
+            android:visibility="visible" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

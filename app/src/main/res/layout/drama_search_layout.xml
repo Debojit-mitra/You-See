@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="5dp"
+    android:id="@+id/relative_root_layout"
+    android:padding="1dp"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/thumbnailContainer"
+        android:layout_width="120dp"
+        android:layout_height="170dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/mode_inverse"
+            app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/dramaThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/thumbnail"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+        <ProgressBar
+            android:id="@+id/thumbnailProgress"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:visibility="visible"
+            android:indeterminateTint="@color/main_color"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rating_layout"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@+id/thumbnailContainer"
+        android:layout_alignBottom="@+id/thumbnailContainer"
+        android:background="@drawable/leftround_card"
+        android:gravity="center"
+        android:backgroundTint="@color/main_color">
+
+        <TextView
+            android:id="@+id/dramaRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/_7_0"
+            android:textColor="@color/mode"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:src="@drawable/ic_round_star_24"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@+id/dramaRating"
+            app:tint="@color/mode"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thumbnailContainer"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/dramaName"
+            android:layout_width="110dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/DramaName"
+            android:textColor="@color/mode"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dramaTotalEpisodes"
+            android:layout_width="110dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/total_episodes"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

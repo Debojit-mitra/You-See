@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".player.PlayerActivity">
+
+    <FrameLayout
+        android:id="@+id/main_video_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/exoPlayerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            app:controller_layout_id="@layout/custom_controls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:resize_mode="fit"
+            app:hide_on_touch="false"
+            app:scrubber_color="@color/mode_blue"
+            app:played_color="@color/mode_blue"
+            app:buffered_color="@color/mode_light_blue"
+            android:animateLayoutChanges="true"
+            app:surface_type="texture_view">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:visibility="visible"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/main_color"
+                />
+
+        </com.google.android.exoplayer2.ui.PlayerView>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rew_touch_left"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:elevation="5dp">
+
+            <ImageView
+                android:id="@+id/rewind_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/round_fast_rewind_24"
+                android:backgroundTint="@color/white"
+                />
+            <TextView
+                android:id="@+id/rewindText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rewind_image"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/for_touch_right"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"
+            android:elevation="5dp">
+
+            <ImageView
+                android:id="@+id/forward_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_round_fast_forward_24"
+                android:backgroundTint="@color/white"
+                />
+            <TextView
+                android:id="@+id/forwardText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/forward_image"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

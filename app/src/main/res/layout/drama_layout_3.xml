@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fullround_card"
+    android:id="@+id/relative_root_layout"
+    android:layout_margin="10dp"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/thumbnailContainer"
+        android:layout_width="100dp"
+        android:layout_height="150dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/mode_inverse"
+            app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/castThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/thumbnail"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+        <ProgressBar
+            android:id="@+id/thumbnailProgress"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/main_color"
+            android:elevation="5dp"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thumbnailContainer"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textView_castRealName"
+            android:layout_width="100dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/n_a"
+            android:textColor="@color/mode"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_castCharacterName"
+            android:layout_width="100dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/n_a"
+            android:textSize="12sp"
+            android:maxLines="2"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView_castRole"
+            android:layout_width="100dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/n_a"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="410dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="410dp">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/animatedImageBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/backgrounds/scenic[0]"
+            android:alpha="0.8" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="410dp"
+            android:background="@drawable/linear_gradient_bg"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/top_airing_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom"
+            android:padding="15dp">
+
+            <RelativeLayout
+                android:id="@+id/thumbnailContainer"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:elevation="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/mode_inverse"
+                    app:cardCornerRadius="10dp">
+                    <ImageView
+                        android:id="@+id/dramaThumbnail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/thumbnail"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <ProgressBar
+                    android:id="@+id/thumbnailProgress"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:elevation="5dp"
+                    android:indeterminateTint="@color/main_color"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignEnd="@+id/thumbnailContainer"
+                android:layout_alignBottom="@+id/thumbnailContainer"
+                android:background="@drawable/leftround_card"
+                android:gravity="center"
+                android:elevation="5dp"
+                android:backgroundTint="@color/main_color">
+
+                <TextView
+                    android:id="@+id/dramaRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/_7_0"
+                    android:textColor="@color/mode"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    />
+
+                <ImageView
+                    android:src="@drawable/ic_round_star_24"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@+id/dramaRating"
+                    android:layout_marginTop="2dp"
+                    app:tint="@color/mode"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/drama_details_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/thumbnailContainer"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/dramaName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:maxLines="3"
+                    android:text="@string/DramaName"
+                    android:textColor="@color/mode"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dramaTotalEpisodes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/total_episodes"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/dramaCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/drama_country"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/releasing_drama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/releasing"
+                android:textColor="@color/mode_blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="170dp"
+                android:layout_toEndOf="@+id/thumbnailContainer"
+                />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

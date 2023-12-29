@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:elevation="5dp"
+    android:id="@+id/card_root_layout"
+    app:cardCornerRadius="10dp">
+
+    <ImageView
+        android:id="@+id/ImageBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[0]"
+        android:elevation="2dp"
+        android:alpha="0.8" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mode_inverse"
+        android:alpha="0.3"
+        android:elevation="2dp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="5dp">
+
+        <RelativeLayout
+            android:id="@+id/thumbnailContainer"
+            android:layout_width="130dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/mode_inverse"
+                app:cardCornerRadius="10dp">
+                <ImageView
+                    android:id="@+id/dramaThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/thumbnail"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/thumbnailProgress"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:elevation="5dp"
+                android:indeterminateTint="@color/main_color"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignEnd="@+id/thumbnailContainer"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/leftround_card"
+            android:gravity="center"
+            android:backgroundTint="@color/main_color"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/dramaRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/_7_0"
+                android:textColor="@color/mode"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+
+            <ImageView
+                android:src="@drawable/ic_round_star_24"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_toEndOf="@+id/dramaRating"
+                app:tint="@color/mode"
+                />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/thumbnailContainer"
+            android:orientation="vertical"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:id="@+id/dramaName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/DramaName"
+                android:maxLines="3"
+                android:textSize="20sp"
+                android:textColor="@color/mode"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dramaTotalEpisodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/total_episodes"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/dramaCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/drama_country"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@drawable/rightround_card"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:elevation="5dp"
+            android:backgroundTint="@color/main_color">
+
+            <TextView
+                android:id="@+id/dramaNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1"
+                android:textColor="@color/mode"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

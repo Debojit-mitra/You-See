@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/drama"
+        android:icon="@drawable/ic_drama"
+        android:title="@string/drama" />
+    <item
+        android:id="@+id/shows"
+        android:icon="@drawable/ic_round_movie_filter_24"
+        android:title="@string/Shows" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_round_home_24"
+        android:title="@string/Home" />
+    <item
+        android:id="@+id/anime"
+        android:icon="@drawable/ic_anime"
+        android:title="@string/anime" />
+</menu>

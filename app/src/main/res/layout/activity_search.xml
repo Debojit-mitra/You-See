@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SearchActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_half_round_card"
+        android:backgroundTint="@color/mode_inverse">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textview_search"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="15dp"
+            android:hint="@string/Search"
+            app:boxStrokeWidth="2dp"
+            app:endIconMode="custom"
+            android:elevation="10dp"
+            app:endIconDrawable="@drawable/ic_round_search_24"
+            app:endIconTint="@color/mode_blue"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLength="30" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/eighteenPlus_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_search"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-10dp"
+            android:text="@string/_18"
+            android:textColor="@color/mode_extra"
+            android:theme="@style/CustomSwitchTheme"
+            android:textStyle="bold"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_search_layout"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_for_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_centerInParent="true" />
+
+        <ProgressBar
+            android:id="@+id/progressBar_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/main_color" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

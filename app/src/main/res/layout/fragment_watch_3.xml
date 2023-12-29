@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mode_inverse"
+    android:id="@+id/main_nested_scrollView"
+    tools:context=".fragments.WatchFragment_3">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/animeSource_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:hintAnimationEnabled="true"
+            app:startIconTint="@color/main_color"
+            app:endIconTint="@color/main_color"
+            app:startIconDrawable="@drawable/ic_server">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/animeSource"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:freezesText="false"
+                android:inputType="none"
+                android:padding="8dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/source"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                tools:ignore="LabelFor,TextContrastCheck,DuplicateSpeakableTextCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textView_show_selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.9"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:visibility="gone"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textColor="@color/mode"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:layout_below="@+id/animeSource_text"
+            android:layout_toStartOf="@+id/title_selected_info_btn"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/title_selected_info_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_round_info_24"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            android:background="@drawable/button_fullround_card_ripple"
+            android:layout_below="@+id/animeSource_text"
+            android:layout_alignParentEnd="true"
+            app:tint="@color/mode" />
+
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sub_dub_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_show_selected"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/sub"
+            android:textColor="@color/mode_extra"
+            android:theme="@style/CustomSwitchTheme"
+            android:textStyle="bold"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/textView_show_wrong_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mode_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/wrong_title"
+            android:visibility="gone"
+            android:background="@drawable/button_fullround_card_ripple"
+            android:padding="5dp"
+            android:layout_below="@+id/textView_show_selected"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentEnd="true"
+            />
+
+
+        <include
+            android:id="@+id/card_root_layout_Continue_watching"
+            layout="@layout/continue_watching_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/textView_show_wrong_title"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_for_episodeGroups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_root_layout_Continue_watching"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/episode_recyclerView_container"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/recyclerView_for_episodeGroups"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_for_episode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar_Main"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:elevation="5dp"
+                android:layout_marginTop="100dp"
+                android:indeterminateTint="@color/main_color" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar_Main_center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:layout_marginTop="100dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/main_color" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

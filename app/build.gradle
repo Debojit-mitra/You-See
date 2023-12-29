@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
+}
+
+android {
+
+    /*packagingOptions {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/INDEX.LIST', 'META-INF/io.netty.versions.properties']
+            //for selenium
+        }
+    }*/
+
+    /*splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            universalApk true
+        }
+    }*/
+
+    namespace 'com.bunny.entertainment.yousee'
+    compileSdk 34
+
+    buildFeatures {
+        buildConfig=true
+    }
+
+    defaultConfig {
+        applicationId "com.bunny.entertainment.yousee"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.4.0-Alpha"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.4.1"))
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation("com.google.firebase:firebase-analytics")
+    // Add the dependency for the Performance Monitoring library
+    implementation("com.google.firebase:firebase-perf")
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    //animated bottom bar
+    implementation 'nl.joery.animatedbottombar:library:1.1.0'
+    //Jsoup yooo
+    implementation 'org.jsoup:jsoup:1.16.1'
+    //volley http library
+    implementation 'com.android.volley:volley:1.2.1'
+    //animatedImageView
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+    //glide
+    implementation "com.github.bumptech.glide:glide:4.15.1"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.15.1') {
+        exclude group: 'glide-parent'
+    }
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    //okHTTP
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    //player
+    implementation 'com.google.android.exoplayer:exoplayer:2.14.1'
+    //info balloon
+    implementation "com.github.skydoves:balloon:1.5.4"
+    //lottie animation
+    implementation "com.airbnb.android:lottie:6.0.0"
+    //expandable textView
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+    //youtube player
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
+
+
+
+
+
+
+
+}
