@@ -4,26 +4,26 @@
 
 ![You See Logo](screenshots/logo.webp)
 
-### This Android application allows users to stream anime, movies, series, and Asian dramas. It is built using Java and Android Studio.
+### You See is an Android application designed for streaming anime, movies, series, and Asian dramas. Built with Java and Android Studio, it offers a user-friendly interface inspired by saikou.
 ### **Note**: This app is currently under development and is not completed. It may contain bugs and incomplete features.
 
 ## Features
 
-- Browse a vast library of anime, movies, series, and Asian dramas.
-- Stream content seamlessly on your Android device.
-- Search for specific titles or browse by categories.
-- Save your favorite shows and movies for later viewing.
-- UI insipired from ***saikou***
+- **Vast Library**: Explore an extensive collection of anime, movies, series, and Asian dramas.
+- **Seamless Streaming**: Enjoy smooth streaming on your Android device.
+- **Search & Browse**: Find specific titles or browse through various categories effortlessly.
+- **Favorites**: Save your favorite shows and movies for easy access later.
 
 ## APIs Used
 
-- [Consumet API](https://github.com/consumet/api.consumet.org): Provides primary data for the app.
+- **[Consumet API](https://github.com/consumet/api.consumet.org)**: The primary data provider for the app.
+
 
 ## Data Sources
 
-- MyDramaList: Used for listing Asian dramas.
-- TMDb: Utilized for movies and series information.
-- MyAnimeList: Used for Anime details.
+- **MyDramaList**: Source for listing Asian dramas.
+- **TMDb (The Movie Database)**: Provides information for movies and series.
+- **MyAnimeList**: Source for detailed anime information.
 
 ## Screenshots
 
@@ -36,15 +36,31 @@
 
 <img src="screenshots/Screenshot-11.jpg" width="600" height="auto">
 
+## Release (alpha version)
+   - [1.4.0-Alpha](https://github.com/Debojit-mitra/You-See/releases/tag/1.4.0-Alpha)
 
 ## Dependencies
 
 - Android SDK
 - Java Development Kit (JDK)
 
+
+## Installation
+
+To get a local copy up and running follow these simple steps:
+
+1. **Clone the repo**
+   ```sh
+   git clone https://github.com/Debojit-mitra/You-See.git
+
+2. **Open with Android Studio**
+   - Import the project in Android Studio.
+3. **Build and Run**
+   - Sync the project with Gradle files and run it on an Android device or emulator.
+
 ## Contributing
 
-Contributions are welcome!
+Contributions are welcome!.
 
 ## Related repositories
 - [api.consumet.org](https://github.com/consumet/api.consumet.org)
