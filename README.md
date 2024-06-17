@@ -44,7 +44,7 @@
 
 ## Contributing
 
-Contributions are welcome! Please follow the [Contributing Guidelines](CONTRIBUTING.md).
+Contributions are welcome!
 
 ## Related repositories
 - [api.consumet.org](https://github.com/consumet/api.consumet.org)
