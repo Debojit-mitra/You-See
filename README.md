@@ -37,7 +37,7 @@
 <img src="screenshots/Screenshot-11.jpg" width="600" height="auto">
 
 ## Release (alpha version)
-   - [1.4.0-Alpha](https://github.com/Debojit-mitra/You-See/releases/tag/1.4.0-Alpha)
+   - [v1.4.0-Alpha](https://github.com/Debojit-mitra/You-See/releases)
 
 ## Dependencies
 
