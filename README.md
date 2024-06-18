@@ -21,9 +21,9 @@
 
 ## Data Sources
 
-- **MyDramaList**: Source for listing Asian dramas.
-- **TMDb (The Movie Database)**: Provides information for movies and series.
-- **MyAnimeList**: Source for detailed anime information.
+- **[MyDramaList](https://mydramalist.com/)**: Source for listing Asian dramas.
+- **[TMDb (The Movie Database)](https://www.themoviedb.org/)**: Provides information for movies and series.
+- **[MyAnimeList](https://myanimelist.net/)**: Source for detailed anime information.
 
 ## Screenshots
 
