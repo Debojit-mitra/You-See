@@ -65,7 +65,7 @@ To get a local copy up and running follow these simple steps:
 
 ## Contributing
 
-Contributions are welcome!.
+Contributions are welcome!. The repository is open to contributions, pull requests, and suggestions from the community. Feel free to fork the repo, make improvements, and submit a pull request for review.
 
 ## Related repositories
 - [api.consumet.org](https://github.com/consumet/api.consumet.org)
