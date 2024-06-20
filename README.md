@@ -5,7 +5,12 @@
 ![You See Logo](screenshots/logo.webp)
 
 ### You See is an Android application designed for streaming anime, movies, series, and Asian dramas. Built with Java and Android Studio, it offers a user-friendly interface inspired by saikou.
-### **Note**: This app is currently under development and is not completed. It may contain bugs and incomplete features.
+
+> [!WARNING]
+This app is currently under development and is not completed. It may contain bugs and incomplete features.
+
+> [!IMPORTANT]
+**Disclaimer**: This app is developed solely as a personal project. I do not own any of the content displayed within the app. Content is sourced from various third-party providers.
 
 ## Features
 
@@ -68,5 +73,3 @@ Contributions are welcome!.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## **Disclaimer**: This app is developed solely as a personal project. I do not own any of the content displayed within the app. Content is sourced from various third-party providers.
